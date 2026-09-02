@@ -47,6 +47,6 @@ opening a public issue.
 
 ## Releasing
 
-Releases are tagged pushes; CI publishes to hex.pm via trusted publishing.
-The maintainer bumps the version in `mix.exs` and `CHANGELOG.md`, then tags
-`vX.Y.Z`.
+Releases are tagged pushes; CI publishes to hex.pm using the `HEX_API_KEY`
+repository secret (a hex.pm key with API write permission). The maintainer
+bumps the version in `mix.exs` and `CHANGELOG.md`, then tags `vX.Y.Z`.

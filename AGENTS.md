@@ -70,6 +70,7 @@ patched cowlib is published.
 
 ## Publishing
 
-Releases are tagged pushes; CI publishes to hex.pm via trusted publishing
-(the hex.pm side must be configured by the owner — see the release
-workflow). `mix hex.publish --yes` runs in CI on tag push.
+Releases are tagged pushes; CI publishes to hex.pm on `v*` tag push using the
+`HEX_API_KEY` repository secret (a hex.pm key with API write permission — hex.pm
+has no trusted-publishing/OIDC support like rubygems.org, so a key is required).
+`mix hex.publish --yes` runs in the release workflow.
