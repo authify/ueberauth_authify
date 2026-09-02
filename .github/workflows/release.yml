@@ -6,7 +6,6 @@ on:
       - 'v*'
 
 env:
-  MIX_ENV: dev
   ELIXIR_VERSION: '1.20.4-otp-29'
   OTP_VERSION: '29.0.5'
 
