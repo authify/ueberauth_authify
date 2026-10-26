@@ -52,12 +52,12 @@ gem is the behavioral spec, and feature parity with it is the goal.
 
 ## Known dependency advisory (accepted)
 
-`mix hex.audit` reports advisories for `cowlib 2.19.0` (EEF-CVE-2026-43966,
-EEF-CVE-2026-43969, EEF-CVE-2026-43971). As of 2026-09-01 there is no
-patched cowlib release — 2.19.0 *is* the latest. cowlib is only a
-test-scoped transitive dependency (`bypass` → `plug_cowboy`) and is never
-shipped to consumers of the hex package. Accepted; re-evaluate when a
-patched cowlib is published.
+`mix hex.audit` reports one advisory for `cowlib 2.21.0`
+(EEF-CVE-2026-43966) — no patched cowlib release exists yet, so it is
+accepted. cowlib 2.21.0, now in the lock, clears EEF-CVE-2026-43971 and
+EEF-CVE-2026-43969. cowlib is only a test-scoped transitive dependency
+(`bypass` → `plug_cowboy`) and is never shipped to consumers of the hex
+package. Re-evaluate when a patched cowlib is published.
 
 ## Testing notes
 
