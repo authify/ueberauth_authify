@@ -59,6 +59,14 @@ defmodule UeberauthAuthify.MixProject do
       {:joken, "~> 2.6"},
       {:jose, "~> 1.11"},
       {:req, "~> 0.7"},
+      # Security floor for mint, a runtime transitive dependency
+      # (req -> finch -> mint). The published package ships no mix.lock, so
+      # without this constraint a consumer can resolve a vulnerable mint.
+      # The floor (>= 1.10.2) clears all 6 mint advisories — EEF-CVE-2026-82729,
+      # -82672, -91043 (HIGH), -92103, -94194 and -82728 (HIGH) — and forces
+      # consumers off the vulnerable 1.9.3 (1.10.0/1.10.1 are affected too).
+      # See ghostex-10a.
+      {:mint, ">= 1.10.2"},
       # Dev/test
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
